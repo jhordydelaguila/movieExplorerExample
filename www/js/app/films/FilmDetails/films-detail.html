@@ -1,0 +1,36 @@
+<ion-view id="filmDetails">  
+    
+    <ion-nav-title>Film details - page {{data.currentPage}}</ion-nav-title>
+
+
+    <ion-slides options="data.sliderOptions" slider="data.sliderDelegate">
+        <ion-slide-page ng-repeat="film in data.films">
+            <ion-content>
+                <div class="card">
+                    <ion-item>
+                        <div class="infoLeft">
+                            <h2>{{film.title}}</h2>
+                            <p>{{film.director}}</p>
+                            <p>{{film.actors}}</p>
+                        </div>
+                        <div class="infoRight">
+                            <p>{{film.year}}</p>
+                            <p>{{film.runtime}}</p>
+                            <p>Rating: {{film.imdbRating}}<p>
+                        </div>
+                    </ion-item>
+
+                    <ion-item class="item-image">
+                        <img safe-src="{{film.poster}}">
+                    </ion-item>            
+
+                    <ion-item class="item-body">
+                        <p>{{film.plot}}</p>
+                    </ion-item>
+                </div>
+            </ion-content>
+        </ion-slide-page>
+    </ion-slides>
+
+
+</ion-view>

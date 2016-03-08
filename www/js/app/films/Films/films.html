@@ -1,0 +1,14 @@
+<ion-view view-title="Films" id="films">    
+    <ion-content>
+        <ion-list>
+            <ion-item class="item-thumbnail-left" ui-sref="app.films-detail({filmTitle:'{{film.title}}'})" ng-repeat="film in films">
+                <img safe-bg-src="{{film.poster}}">
+                <div class="info">
+                    <h2>{{film.title}}</h2>
+                    <p>{{film.director}} - {{film.year}}</p>
+                </div>
+                <p class="rating">Rating: {{film.imdbRating}}<p>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>
